@@ -1,4 +1,4 @@
-# Technical Test for MCG / DBLX
+# Technical Test for DBLX
 
 By Matt Hamer
 
