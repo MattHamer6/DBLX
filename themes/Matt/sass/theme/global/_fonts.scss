@@ -1,0 +1,45 @@
+@font-face {
+	font-family: lightFont;
+	src: url("/wp-content/themes/Matt/fonts/custom/GilroyLight.woff")
+			format("woff"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyLight.ttf")
+			format("truetype"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyLight.otf")
+			format("opentype");
+}
+
+@font-face {
+	font-family: boldFont;
+	src: url("/wp-content/themes/Matt/fonts/custom/GilroyBold.woff")
+			format("woff"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyBold.ttf")
+			format("truetype"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyBold.otf")
+			format("opentype");
+}
+
+@font-face {
+	font-family: extraFont;
+	src: url("/wp-content/themes/Matt/fonts/custom/GilroyExtraBold.woff")
+			format("woff"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyExtraBold.ttf")
+			format("truetype"),
+		url("/wp-content/themes/Matt/fonts/custom/GilroyExtraBold.otf")
+			format("opentype");
+}
+
+%fontLight {
+	font-family: lightFont;
+	font-weight: 300;
+	font-style: normal;
+}
+%fontBold {
+	font-family: boldFont;
+	font-weight: 600;
+	font-style: normal;
+}
+%fontExtra {
+	font-family: extraFont;
+	font-weight: 800;
+	font-style: normal;
+}

@@ -1,0 +1,81 @@
+.landing-page {
+	nav {
+		z-index: 10;
+		position: absolute;
+		bottom: 0;
+		display: none;
+		right: 100px;
+
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+		@include respond-to("large") {
+			right: 150px;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			align-items: flex-start;
+
+			li {
+				position: relative;
+				padding-bottom: 10px;
+
+				&:not(:last-of-type) {
+					margin-right: 100px;
+
+					@include media-breakpoint-up(xl) {
+						margin-right: 150px;
+					}
+					@include respond-to("large") {
+						margin-right: 200px;
+					}
+					@include respond-to("extra") {
+						margin-right: 300px;
+					}
+				}
+				a {
+					color: $font-base;
+					text-decoration: none;
+					display: flex;
+					align-items: center;
+
+					p {
+						@extend %fontLight;
+						color: $font-base;
+						margin: 0;
+						text-transform: uppercase;
+						text-align: right;
+						letter-spacing: 3px;
+						white-space: nowrap;
+						margin-right: 10px;
+						font-size: 12px;
+					}
+					span {
+						@extend %fontLight;
+						color: $font-base;
+						font-size: 38px;
+					}
+				}
+				&::after {
+					content: "";
+					width: 0;
+					height: 2px;
+					background: $font-base;
+					transition: all 1s ease-in-out;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+				&:hover,
+				&.active {
+					&::after {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

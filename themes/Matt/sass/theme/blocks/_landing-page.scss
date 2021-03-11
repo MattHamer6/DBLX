@@ -1,0 +1,213 @@
+@import "includes/section-nav";
+
+.landing-page {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+
+	.main-image {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: auto;
+		right: -300px;
+
+		@include media-breakpoint-up(md) {
+			right: -350px;
+		}
+		@include media-breakpoint-up(lg) {
+			right: -100px;
+		}
+		@include respond-to("large") {
+			right: 130px;
+		}
+		@include respond-to("extra") {
+			right: 215px;
+		}
+	}
+	&-wrapper {
+		height: 100%;
+		position: relative;
+
+		.large-words {
+			z-index: 0;
+			position: absolute;
+			top: 0;
+			right: 25px;
+			transform: rotate(90deg);
+			display: none;
+
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
+			p {
+				position: absolute;
+				opacity: 0.4;
+				@extend %fontBold;
+				margin: 0;
+				font-size: 175px;
+
+				@include media-breakpoint-up(xl) {
+					font-size: 200px;
+				}
+				&.one {
+					top: -75px;
+
+					@include media-breakpoint-up(lg) {
+						top: 35px;
+					}
+					@include respond-to("large") {
+						top: 100px;
+					}
+					@include respond-to("extra") {
+						top: 200px;
+					}
+				}
+				&.two {
+					top: 75px;
+
+					@include media-breakpoint-up(lg) {
+						top: 215px;
+					}
+					@include respond-to("large") {
+						top: 300px;
+					}
+					@include respond-to("extra") {
+						top: 400px;
+					}
+				}
+			}
+		}
+		// Main Content
+		.main-content {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			//left: 250px;
+
+			.numbers,
+			.title h1,
+			.title p,
+			.button-wrapper {
+				opacity: 0;
+				transition: all 1s ease-in-out;
+			}
+			.numbers {
+				@extend %fontLight;
+				display: flex;
+				color: $font-base;
+				margin-bottom: 20px;
+				font-size: 14px;
+
+				span {
+					&:first-of-type {
+						display: flex;
+						align-items: center;
+
+						&::after {
+							content: "";
+							height: 1px;
+							width: 35px;
+							background: $font-base;
+							margin: 0 5px;
+						}
+					}
+					&:last-of-type {
+						margin-right: 10px;
+					}
+				}
+			}
+			.title {
+				margin-bottom: 30px;
+
+				@include media-breakpoint-up(xl) {
+					margin-bottom: 50px;
+				}
+				@include respond-to("extra") {
+					margin-bottom: 75px;
+				}
+				h1 {
+					@extend %fontBold;
+					color: $font-base;
+					margin: 0;
+					font-size: 38px;
+
+					@include media-breakpoint-up(xl) {
+						font-size: 44px;
+					}
+					@include respond-to("large") {
+						font-size: 48px;
+					}
+					@include respond-to("extra") {
+						font-size: 60px;
+					}
+				}
+				p {
+					@extend %fontLight;
+					color: $font-base;
+					margin: 0;
+					font-size: 22px;
+
+					@include media-breakpoint-up(xl) {
+						font-size: 26px;
+					}
+					@include respond-to("large") {
+						font-size: 28px;
+					}
+					@include respond-to("extra") {
+						font-size: 32px;
+					}
+				}
+			}
+			.button-wrapper {
+				text-align: left;
+
+				a {
+					text-decoration: none;
+					display: flex;
+					align-items: center;
+					@extend %fontLight;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					white-space: nowrap;
+					color: $font-base;
+					font-size: 12px;
+
+					i {
+						font-size: 16px;
+						margin-right: 5px;
+					}
+					span {
+						position: relative;
+						transition: all 0.5s ease-in-out;
+						left: 0;
+					}
+					&:hover {
+						span {
+							left: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.logo {
+		position: absolute;
+		top: 30px;
+		width: 175px;
+		left: 100px;
+
+		@include media-breakpoint-up(xl) {
+			left: 125px;
+		}
+		@include respond-to("large") {
+			top: 50px;
+			left: 150px;
+			width: 200px;
+		}
+		img {
+			width: auto;
+		}
+	}
+}

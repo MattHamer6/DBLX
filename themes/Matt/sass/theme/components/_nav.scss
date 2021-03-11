@@ -1,0 +1,131 @@
+.slide-menu {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+	background-color: $font-base;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-wrap: wrap;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+	padding: 50px;
+	width: 100%;
+
+	@include media-breakpoint-up(md) {
+		width: 450px;
+	}
+	@include respond-to("extra") {
+		width: 500px;
+	}
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	#hide-nav {
+		cursor: pointer;
+		position: absolute;
+		top: 50px;
+		right: 50px;
+
+		p {
+			@extend %fontLight;
+			color: $white;
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			white-space: nowrap;
+			font-size: 12px;
+
+			span {
+				font-size: 18px;
+				margin-left: 10px;
+			}
+		}
+	}
+	&-items {
+		nav {
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+
+				li {
+					position: relative;
+					transform: translateX(200px);
+
+					a {
+						position: relative;
+						@extend %fontLight;
+						color: $white;
+						letter-spacing: 3px;
+						text-transform: uppercase;
+						display: flex;
+						transition: all 1s ease-in-out;
+						text-decoration: none;
+						font-size: 20px;
+
+						@include media-breakpoint-up(xl) {
+							font-size: 20px;
+						}
+						@include respond-to("large") {
+							font-size: 24px;
+						}
+						@include respond-to("extra") {
+							font-size: 28px;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							bottom: -10px;
+							background: $white;
+							height: 2px;
+							width: 0;
+							transition: all 0.7s ease-in-out;
+						}
+					}
+					&:hover {
+						a::after {
+							width: 100%;
+						}
+					}
+					&:not(:last-of-type) {
+						margin-bottom: 50px;
+					}
+				}
+			}
+		}
+	}
+	&-footer {
+		width: 100%;
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column;
+
+			@include media-breakpoint-up(md) {
+				flex-direction: row;
+			}
+			li {
+				a {
+					@extend %fontLight;
+					color: $white;
+					font-size: 12px;
+					letter-spacing: 3px;
+					text-transform: uppercase;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
